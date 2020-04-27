@@ -7,6 +7,8 @@ data = json.load(open("data.json"))
 
 window = Tk()
 
+window.configure(bg='#856ff8')
+
 def dictionary():
     word = e1.get()
     word = word.lower()
@@ -22,7 +24,7 @@ def dictionary():
     elif len(get_close_matches(word, data.keys())) > 0:
         ask = tkinter.messagebox.askquestion("Word not found", "Trying to search %s? " % get_close_matches(word, data.keys())[0])
         # ask = ask.lower()
-        if ask == 'yes':
+        # if ask == 'yes':
             # if word in data:
             #     txt.delete("1.0", END)
             #     txt.insert(END, data[word])
@@ -35,17 +37,17 @@ def dictionary():
             # else:
             #     window.destroy()
 
-l1 = Label(window, text="Enter the word: ")
+l1 = Label(window, text="Enter the word: ", bg='#856ff8', fg="olive")
 l1.grid(row=0, column=0)
 
 text=StringVar()
-e1 = Entry(window, textvariable=text, width=30)
+e1 = Entry(window, textvariable=text, width=30, fg="olive", bg='#856ff8')
 e1.grid(row=0, column=1)
 
-b1 = Button(window, text="Search", width=25, command=dictionary)
+b1 = Button(window, text="Search", width=25, command=dictionary, fg="olive")
 b1.grid(row=1, column=1)
 
-txt=Text(window, height=11, width=50, wrap=WORD)
+txt=Text(window, height=11, width=50, wrap=WORD, fg="olive", bg='#856ff8')
 txt.grid(row=2, column=0, rowspan=6, columnspan=2)
 
 sb1=Scrollbar(window)
