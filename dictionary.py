@@ -26,18 +26,13 @@ def dictionary():
     elif len(get_close_matches(word, data.keys())) > 0:
         ask = tkinter.messagebox.askquestion("Word not found", "Trying to search %s? " % get_close_matches(word, data.keys())[0])
         # ask = ask.lower()
-        # if ask == 'yes':
-            # if word in data:
-            #     txt.delete("1.0", END)
-            #     txt.insert(END, data[word])
-            # elif word.title() in data:
-            #     txt.delete("1.0", END)
-            #     txt.insert(END, data[word.title()])  
-            # elif word.upper() in data:
-            #     txt.delete("1.0", END)
-            #     txt.insert(END, data[word.upper()]) 
-            # else:
-            #     window.destroy()
+        if ask == 'yes':
+            def exception():
+                txt.delete("1.0", END)
+                txt.insert(END, data[word])
+        else:
+            tkinter.messagebox.showinfo("No such word", "There is no such word as %s " % get_close_matches(word, data.keys())[0])
+
 def clear():
     e1.delete("0", END)
     txt.delete("1.0", END)
