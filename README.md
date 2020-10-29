@@ -1,3 +1,3 @@
 # Dictionary-GUI-
 GUI Dictionary
--------------
+--------------
